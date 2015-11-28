@@ -1,8 +1,8 @@
 module.exports = function (req, res, next) {
-  if (req.params.x > 2000 || req.params.y > 2000 || req.params.x < 20 || req.params.y < 20) {
+  var x = parseInt(req.params.x);
+  var y = parseInt(req.params.y);
+  if (x > 2000 || y > 2000 || x < 0 || y < 0 || x === NaN || y === NaN) {
     res.redirect('/');
   }
-  req.params.x = parseInt(req.params.x);
-  req.params.y = parseInt(req.params.y);
   next();
 };

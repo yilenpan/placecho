@@ -20,5 +20,4 @@ module.exports = function (req, res) {
     .stream('jpeg', function (err, stdout, stderr) {
       stdout.pipe(res);
     });
-
-}
+};
